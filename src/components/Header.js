@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className="bg-white ml-[-20px] shadow-md border-b border-gray-100 backdrop-blur-sm bg-white/95">
+    <div className="bg-white ml-[-20px] shadow-sm border-b border-gray-200">
       <div className="mx-auto w-full max-w-container">
-        <div className="flex items-center py-5 lg:py-5 lg:px-0 px-5 max-sm:block max-sm:text-center">
-          <div className="flex items-end max-sm:block max-sm:mb-2.5">
+        <div className="flex items-center py-6 lg:py-6 lg:px-4 px-6 max-sm:block max-sm:text-center">
+          <div className="flex items-end max-sm:block max-sm:mb-4">
             <div className="transform transition-transform duration-200 hover:scale-105">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -29,36 +29,36 @@ function Header() {
             </div>
           </div>
 
-          <div className="flex-1 text-right pr-1.5 max-sm:text-left">
+          <div className="flex-1 text-right max-sm:text-left">
             <NavLink
               to="/"
               exact
-              className="no-underline ml-1 text-gray-700 py-2.5 px-5 pl-4 hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50 hover:rounded-lg rounded-lg transition-all duration-200 max-sm:text-left max-sm:block font-medium"
-              activeClassName="bg-gradient-to-r from-primary to-blue-600 text-white shadow-md"
+              className="no-underline ml-2 text-gray-600 py-3 px-6 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 max-sm:text-left max-sm:block max-sm:mb-1 font-medium"
+              activeClassName="bg-blue-50 text-blue-600 border-b-2 border-blue-600"
               title={__('Gateway Settings', 'texty')}
             >
               <span className="dashicons dashicons-admin-settings"></span>
-              <span className="ml-1">{__('Gateway Settings', 'texty')}</span>
+              <span className="ml-2">{__('Gateway Settings', 'texty')}</span>
             </NavLink>
 
             <NavLink
               to="/notifications"
-              className="no-underline ml-1 text-gray-700 py-2.5 px-5 pl-4 hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50 hover:rounded-lg rounded-lg transition-all duration-200 max-sm:text-left max-sm:block font-medium"
-              activeClassName="bg-gradient-to-r from-primary to-blue-600 text-white shadow-md"
+              className="no-underline ml-2 text-gray-600 py-3 px-6 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 max-sm:text-left max-sm:block max-sm:mb-1 font-medium"
+              activeClassName="bg-blue-50 text-blue-600 border-b-2 border-blue-600"
               title={__('Notifications', 'texty')}
             >
               <span className="dashicons dashicons-admin-plugins"></span>
-              <span className="ml-1">{__('Notifications', 'texty')}</span>
+              <span className="ml-2">{__('Notifications', 'texty')}</span>
             </NavLink>
 
             <NavLink
               to="/tools"
-              className="no-underline ml-1 text-gray-700 py-2.5 px-5 pl-4 hover:bg-gradient-to-r hover:from-gray-50 hover:to-blue-50 hover:rounded-lg rounded-lg transition-all duration-200 max-sm:text-left max-sm:block font-medium"
-              activeClassName="bg-gradient-to-r from-primary to-blue-600 text-white shadow-md"
+              className="no-underline ml-2 text-gray-600 py-3 px-6 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 max-sm:text-left max-sm:block max-sm:mb-1 font-medium"
+              activeClassName="bg-blue-50 text-blue-600 border-b-2 border-blue-600"
               title={__('Tools', 'texty')}
             >
               <span className="dashicons dashicons-admin-tools"></span>
-              <span className="ml-1">{__('Tools', 'texty')}</span>
+              <span className="ml-2">{__('Tools', 'texty')}</span>
             </NavLink>
           </div>
         </div>

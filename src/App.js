@@ -26,9 +26,9 @@ function App() {
 
       <Header />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/20">
-        <div className="mt-6 texty pb-12">
-          <div className="mx-auto w-full max-w-container">
+      <div className="min-h-screen bg-gray-50">
+        <div className="texty pb-12">
+          <div className="mx-auto w-full max-w-container px-4 pt-8">
             <Switch>
               <Route path="/notifications" component={Notifications} />
               <Route path="/tools" component={Tools} />

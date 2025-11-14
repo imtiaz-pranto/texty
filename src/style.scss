@@ -11,18 +11,21 @@
   }
 
   .components-base-control__label {
-    @apply block font-semibold mb-2.5 text-gray-900;
+    @apply block font-medium mb-2 text-sm text-gray-700;
   }
 
   .components-text-control__input,
   .components-textarea-control__input,
   .react-tel-input .form-control {
-    @apply border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-700 block text-base transition-all duration-200;
-    @apply focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none;
-    @apply hover:border-gray-300 bg-white shadow-sm;
+    @apply border-2 border-gray-300 rounded-lg px-4 py-3 text-gray-900 block text-base transition-all duration-200;
+    @apply hover:border-gray-400 bg-white;
 
     &:focus {
-      @apply border-primary ring-2 ring-primary/20 shadow-md;
+      @apply border-blue-500 ring-2 ring-blue-200 outline-none;
+    }
+
+    &:disabled {
+      @apply bg-gray-50 text-gray-500 cursor-not-allowed;
     }
   }
 
@@ -70,10 +73,10 @@
   }
 
   .components-card {
-    @apply my-8 shadow-lg rounded-xl overflow-hidden border-0;
+    @apply my-6 rounded-xl overflow-hidden;
 
     .components-card__header {
-      @apply text-lg px-8 py-6 font-semibold;
+      @apply text-lg px-6 py-4 font-semibold border-b border-gray-200 bg-white;
 
       .sub-heading {
         @apply text-sm font-normal;
@@ -85,12 +88,12 @@
     }
 
     .components-card__body {
-      @apply p-8;
+      @apply p-6 bg-white;
     }
 
     @media screen and (max-width: 425px) {
       .components-card__body {
-        @apply py-3 px-4;
+        @apply py-4 px-4;
       }
 
       .has-panel.components-card__body {
@@ -103,7 +106,7 @@
     @apply border-0;
 
     .components-panel__body {
-      @apply border-t border-b border-gray-200 transition-all duration-200;
+      @apply border-t border-gray-200 transition-all duration-200;
 
       &:first-child {
         @apply border-t-0;
@@ -114,36 +117,47 @@
       }
 
       &.is-opened {
-        @apply border-2 border-primary/20 shadow-lg rounded-lg my-2;
+        @apply border-l-4 border-transparent shadow-sm rounded-lg my-2 bg-gray-50;
       }
 
       .components-panel__body-title {
+        @apply px-6 py-4 cursor-pointer hover:bg-gray-50 transition-all duration-200;
+
         .components-button {
-          @apply flex transition-all duration-200;
+          @apply flex items-center w-full transition-all duration-200;
         }
 
         span.label {
-          @apply ml-auto mr-12 text-xs py-1.5 px-3 rounded-full inline-block leading-5 bg-gray-200 font-semibold transition-all duration-200;
+          @apply ml-auto mr-12 text-xs py-1 px-3 rounded-full inline-block leading-5 font-medium transition-all duration-200;
+          @apply bg-gray-100 text-gray-600;
 
           &.active {
-            @apply bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md;
+            @apply bg-green-100 text-green-700;
           }
         }
       }
 
-      &:nth-child(odd) .components-panel__body-title {
-        @apply bg-gradient-to-r from-gray-50 to-blue-50/30;
+      &:nth-child(even) .components-panel__body-title {
+        @apply bg-white;
 
         &:hover {
-          @apply bg-gradient-to-r from-gray-100 to-blue-100/50;
+          @apply bg-gray-50;
+        }
+      }
+
+      &:nth-child(odd) .components-panel__body-title {
+        @apply bg-gray-50;
+
+        &:hover {
+          @apply bg-gray-100;
         }
       }
 
       &.is-opened {
-        @apply mb-5;
+        @apply mb-4;
 
         .components-panel__body-title {
-          @apply bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 mb-5;
+          @apply bg-white border-b border-gray-200 mb-0 rounded-t-lg;
         }
       }
     }
@@ -153,13 +167,14 @@
     @apply rounded-lg transition-all duration-200;
 
     &.is-primary {
-      @apply bg-gradient-to-r from-primary to-blue-600 px-6 font-semibold;
-      @apply hover:from-primary-dark hover:to-blue-700 hover:shadow-lg;
-      @apply transform hover:-translate-y-0.5 active:translate-y-0;
+      @apply bg-blue-600 px-6 font-medium;
+      @apply hover:bg-blue-700 hover:shadow-md;
+      @apply focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+      @apply disabled:bg-gray-400 disabled:cursor-not-allowed;
     }
 
     &.large {
-      @apply text-base px-8 h-12;
+      @apply text-base px-8 py-3 h-auto;
     }
   }
 
@@ -204,6 +219,39 @@
 
   /* Enhanced focus states for accessibility */
   *:focus-visible {
-    @apply outline-2 outline-primary/50 outline-offset-2;
+    @apply outline-2 outline-blue-500 outline-offset-2;
+  }
+
+  /* Text area min height */
+  .components-textarea-control__input {
+    min-height: 120px;
+  }
+
+  /* Improve select component styling */
+  .css-1uccc91-singleValue,
+  .css-1wa3eu0-placeholder {
+    @apply text-gray-700;
+  }
+
+  /* Loading state skeleton */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+}
+
+/* Toast notifications custom styling */
+.Toastify__toast {
+  @apply rounded-lg shadow-lg;
+
+  &--success {
+    @apply bg-green-50 border-l-4 border-green-500 text-green-800;
+  }
+
+  &--error {
+    @apply bg-red-50 border-l-4 border-red-500 text-red-800;
+  }
+
+  &--info {
+    @apply bg-blue-50 border-l-4 border-blue-500 text-blue-800;
   }
 }
