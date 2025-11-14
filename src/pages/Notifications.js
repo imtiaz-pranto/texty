@@ -87,29 +87,31 @@ function Notifications() {
 
   return (
     <div>
-      <h1>{__('Notifications', 'texty')}</h1>
-      <p>
-        {__(
-          'Enable or disable notification based on different events.',
-          'texty'
-        )}
-      </p>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">{__('Notifications', 'texty')}</h1>
+        <p className="text-gray-600">
+          {__(
+            'Enable or disable notification based on different events.',
+            'texty'
+          )}
+        </p>
+      </div>
 
       <form onSubmit={handleSubmit}>
         {Object.keys(settings.groups).map((group) => {
           const { title, available } = settings.groups[group];
 
           return (
-            <Card key={group}>
+            <Card key={group} className="shadow-lg border-0 transition-all duration-300 hover:shadow-xl">
               <CardHeader
-                className={classNames({
-                  inactive: !available,
+                className={classNames('bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-100', {
+                  'inactive opacity-60': !available,
                 })}
               >
-                {title}
+                <span className="font-semibold">{title}</span>
 
                 {!available && (
-                  <span className="sub-heading">
+                  <span className="sub-heading text-amber-600 ml-2">
                     {__('Plugin not installed', 'texty')}
                   </span>
                 )}
@@ -141,12 +143,12 @@ function Notifications() {
           );
         })}
 
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-6">
           <Button
             type="submit"
             isPrimary={true}
             isBusy={isSaving}
-            className="large"
+            className="large shadow-lg hover:shadow-xl transition-all duration-200"
           >
             {isSaving ? __('Saving...', 'texty') : __('Save Changes', 'texty')}
           </Button>

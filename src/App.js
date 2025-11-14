@@ -26,13 +26,15 @@ function App() {
 
       <Header />
 
-      <div className="mt-6 texty">
-        <div className="mx-auto w-full max-w-container">
-          <Switch>
-            <Route path="/notifications" component={Notifications} />
-            <Route path="/tools" component={Tools} />
-            <Route path="/" exact component={Settings} />
-          </Switch>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/20">
+        <div className="mt-6 texty pb-12">
+          <div className="mx-auto w-full max-w-container">
+            <Switch>
+              <Route path="/notifications" component={Notifications} />
+              <Route path="/tools" component={Tools} />
+              <Route path="/" exact component={Settings} />
+            </Switch>
+          </div>
         </div>
       </div>
     </Router>
